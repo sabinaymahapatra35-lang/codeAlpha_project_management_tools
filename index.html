@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxima - Manage Your Projects Seamlessly</title>
+    <meta name="description" content="A powerful, full-stack project management application with real-time updates.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="auth-body">
+    <div class="auth-container">
+        <div class="auth-graphics">
+            <h1 class="logo">Proxima<span class="dot">.</span></h1>
+            <p>Elevate your team's workflow with stunning design and real-time collaboration.</p>
+            <div class="glass-orb orb-1"></div>
+            <div class="glass-orb orb-2"></div>
+        </div>
+        <div class="auth-form-wrapper glass-panel">
+            <div id="login-form-container">
+                <h2>Welcome Back</h2>
+                <p class="subtitle">Log in to continue to your dashboard.</p>
+                <form id="login-form">
+                    <div class="input-group">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" id="login-email" placeholder="Email Address" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="login-password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Log In <i
+                            class="fa-solid fa-arrow-right"></i></button>
+                    <div class="error-msg" id="login-error"></div>
+                </form>
+                <p class="switch-form">Don't have an account? <span onclick="toggleAuthForm('register')">Sign up</span>
+                </p>
+            </div>
+
+            <div id="register-form-container" class="hidden">
+                <h2>Create Account</h2>
+                <p class="subtitle">Join Proxima and manage work effectively.</p>
+                <form id="register-form">
+                    <div class="input-group">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="register-name" placeholder="Full Name" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" id="register-email" placeholder="Email Address" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="register-password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Sign Up <i
+                            class="fa-solid fa-user-plus"></i></button>
+                    <div class="error-msg" id="register-error"></div>
+                </form>
+                <p class="switch-form">Already have an account? <span onclick="toggleAuthForm('login')">Log in</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>
