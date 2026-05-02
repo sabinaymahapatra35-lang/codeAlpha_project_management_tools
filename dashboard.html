@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Proxima</title>
+    <meta name="description" content="View your projects and teams.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <nav class="navbar glass-panel">
+        <div class="nav-brand">
+            <h1 class="logo">Proxima<span>.</span></h1>
+        </div>
+        <div class="nav-user">
+            <span id="user-greeting">Hello, User</span>
+            <button class="btn btn-outline" id="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+        </div>
+    </nav>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <div>
+                <h2>Your Projects</h2>
+                <p>Manage and organize your team's workflow.</p>
+            </div>
+            <button class="btn btn-primary" onclick="openModal('create-project-modal')">
+                <i class="fa-solid fa-plus"></i> New Project
+            </button>
+        </header>
+
+        <section class="projects-grid" id="projects-container">
+            <!-- Projects will be dynamically loaded here -->
+            <div class="loading-spinner"><i class="fa-solid fa-circle-notch fa-spin"></i></div>
+        </section>
+    </main>
+
+    <!-- Create Project Modal -->
+    <div class="modal auth-form-wrapper glass-panel hidden" id="create-project-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create New Project</h3>
+                <button class="close-btn" onclick="closeModal('create-project-modal')">&times;</button>
+            </div>
+            <form id="create-project-form">
+                <div class="input-group">
+                    <input type="text" id="project-name" placeholder="Project Name" required>
+                </div>
+                <div class="input-group">
+                    <textarea id="project-desc" placeholder="Project Description" rows="3"></textarea>
+                </div>
+                <!-- Future improvement: Add member selection UI -->
+                <button type="submit" class="btn btn-primary btn-block">Create <i class="fa-solid fa-check"></i></button>
+                <div class="error-msg" id="project-error"></div>
+            </form>
+        </div>
+    </div>
+    
+    <div class="modal-backdrop hidden" id="modal-backdrop"></div>
+
+    <script src="js/api.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
